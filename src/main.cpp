@@ -27,8 +27,8 @@ GxEPD2_3C<GxEPD2_213_Z98c, GxEPD2_213_Z98c::HEIGHT> display(GxEPD2_213_Z98c(/*CS
 
 
 
-const char HelloWorld[] = "Hello!";
-const char HelloWeACtStudio[] = "epd";
+const char HelloWorld[] = "just a text";
+const char HelloWeACtStudio[] = "this is epd";
 
 void helloWorld()
 {
@@ -178,16 +178,16 @@ void showPartialUpdate()
 void setup()
 {
   Serial.begin(9600);
-  Serial.println("setup display");
-  
   display.init(9600,true,50,false);
+  Serial.println("setup display");
+
   helloWorld();
   helloFullScreenPartialMode();
   delay(1000);
   if (display.epd2.hasFastPartialUpdate)
   {
     showPartialUpdate();
-    delay(1000);
+    delay(5000);
   }
   display.hibernate();
 }
